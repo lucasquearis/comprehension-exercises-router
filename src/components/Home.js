@@ -11,6 +11,9 @@ class Home extends Component {
         <div>
           <Link to="/users">Users</Link>
         </div>
+        <div>
+          <Link to="/strict-acess">Acesso Restrito</Link>
+        </div>
         <h2>Home</h2>
         <p> My awesome Home component </p>
       </div>
