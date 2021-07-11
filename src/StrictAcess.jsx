@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class StrictAcess extends Component {
   render() {
-    const { user } = this.props;
+    const { username, password } = this.props.user;
+    if (username !== 'joao' || password !== 1234) {
+      alert('Acesso Negado!')
+      return <Redirect to='/' />
+    }
     return(
-      <Route exact path="/">
-        { user.username === 'joao' && user.password === 1234 ? <h1>Welcome joao!</h1> : alert('Acesso Negado!') }
-      </Route>
+      <h1>Welcome joao!</h1>
     );
   }
 }
